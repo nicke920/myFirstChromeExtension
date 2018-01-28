@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+	"name": "PageFontStyle Extension",
+	"version": "1.0",
+	"description": "Changes font style on specific page",
+	"icons": {
+		"128": "icons/icon128.png",
+		"48": "icons/icon48.png",
+		"16": "icons/icon16.png"
+	},
+	// page_action puts the extension icon to the right of the address bar
+	"page_action": {
+		"default_icon": "icons/icon16.png",
+		"default_popup": "popup.html",
+		"default_title": "PageFontStyle"
+	},
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://nickevansmedia.com/*"],  //the urls where we need to run the scripts
+			"js": ["content.js", "jquery-3.3.1.min.js"],  //the array of js files needed to run the scripts
+			"css": ["content.css"]
+		}
+	],
+
+	"permissions": [
+		"tabs",
+		"http://nickevansmedia.com/*" //request permission from the webpage its gonna be run on
+	]
+}
