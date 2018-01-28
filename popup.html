@@ -6,7 +6,6 @@
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="popup.js"></script>
 	<script src="jscolor.min.js"></script>
-	<script src="popup.js"></script>
 
 	<style>
 		body {
@@ -16,7 +15,12 @@
 	</style>
 </head>
 <body>
-	<input type="text" id="fontColor" class="jscolor" value="#ffcc00">
+	<label for="colorPicker">Pick a color!</label>
+	<input name="colorPicker" type="text" id="fontColor" class="jscolor" value="#ffcc00">
+	
+	<label for="fontSize">Pick a font size</label>
+	<input type="number" name="fontSize" id="fontSize" value="16">
+
 	<input type="submit" id="btnChange" value="Change">
 </body>
 </html>

@@ -4,9 +4,23 @@ chrome.runtime.sendMessage({
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-	if (request.todo == "changeColor") {
+	if (request.todo == "changeStyle") {
 		var addColor = "#" + request.clickedColor;
+		var fontSize = request.changedFontSize;
 
-		$('p').css('color', addColor);
+		console.log('whats it returnn', $('p').css(["color", "font-size"]))
+
+		// $('p').css({
+		// 	"color": addColor,
+		// 	"font-size": fontSize + "px"
+		// });
+
+		$('body').toggleClass('mix')
+
+		chrome.runtime.sendMessage({
+			persist: "updateStylesInPopup",
+			color: addColor, 
+			size: fontSize
+		})
 	}
 })

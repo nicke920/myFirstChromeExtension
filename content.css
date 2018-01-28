@@ -1,0 +1,12 @@
+body.mix p, 
+body.mix h1,
+body.mix h2,
+body.mix h3,
+body.mix h4,
+body.mix h5,
+body.mix span,
+body.mix li,
+body.mix a {
+	background-color: black!important;
+	color: white!important;
+}
